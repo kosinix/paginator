@@ -20,7 +20,7 @@ class PaginatorTest extends PHPUnit_Framework_TestCase
         $missing_functions = array();
         $public_functions = array();
         
-        $reflection = new ReflectionClass('\Crispin\Paginator');
+        $reflection = new ReflectionClass('\Kosinix\Paginator');
         
         // Get class public functions
         foreach( $reflection->getMethods(ReflectionMethod::IS_PUBLIC) as $method ) {
