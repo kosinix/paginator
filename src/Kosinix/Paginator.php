@@ -1,6 +1,7 @@
 <?php
 /**
- * Paginator - Split large data into smaller chunks.
+ * Paginator
+ * Split large data into smaller chunks.
  * 
  * @author Nico Amarilla
  */
