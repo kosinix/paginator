@@ -26,10 +26,11 @@ $sql = sprintf('SELECT * FROM users LIMIT %d,%d', $paginator->get_start_index(),
 
 
 The constructor accepts the following parameters:
-**total** - The total number of records.
-**current_page** - The current page to display. Defaults to 1.
-**per_page** - The number of records in a page. Defaults to 10. 
-**pages_width** - The number of pages to show on left and right of the current page. Defaults to null. null will display all pages. This is useful when there are too many pages.
+
+- **total** - The total number of records.
+- **current_page** - The current page to display. Defaults to 1.
+- **per_page** - The number of records in a page. Defaults to 10. 
+- **pages_width** - The number of pages to show on left and right of the current page. Defaults to null. null will display all pages. This is useful when there are too many pages.
 
 Terms are best explained by this image
 
