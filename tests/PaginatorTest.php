@@ -3,7 +3,7 @@ use Kosinix\Paginator;
 
 class PaginatorTest extends PHPUnit_Framework_TestCase
 {
-    public function testStartIndexOnZeroTotal()
+    public function testOnZeroTotal()
     {
         $total = 0;
         $paginator = new Paginator($total);
@@ -14,6 +14,18 @@ class PaginatorTest extends PHPUnit_Framework_TestCase
     }
     
     
+    public function testAgainstValues()
+    {
+        $total = 23;
+        $per_page = 10;
+        $current_page = 2;
+        $paginator = new Paginator($total, $current_page, $per_page);
+        
+        $this->assertEquals(10, $paginator->get_start_index());
+        $this->assertEquals(19, $paginator->get_end_index());
+        $this->assertEquals(1, $paginator->get_previous_page());
+        $this->assertEquals(3, $paginator->get_next_page());
+    }
     
     public function testClassGettersCompleteness(){
         
