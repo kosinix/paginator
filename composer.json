@@ -1,4 +1,17 @@
 {
+    "name": "kosinix/paginator",
+    "description": "PHP class to split large data into smaller chunks for use in web apps",
+    "keywords": ["paginator"],
+    "homepage": "https://github.com/kosinix/paginator",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nico Amarilla",
+            "email": "kosinix@codefleet.net",
+            "homepage": "http://www.kosinix.com"
+        }
+    ],
     "autoload": {
         "psr-4": { "": "src/" }
     }
