@@ -1,5 +1,5 @@
 <?php
-use Crispin\Paginator;
+use Kosinix\Paginator;
 
 class PaginatorTest extends PHPUnit_Framework_TestCase
 {
