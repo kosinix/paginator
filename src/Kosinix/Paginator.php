@@ -4,7 +4,7 @@
  * 
  * @author Nico Amarilla
  */
-namespace Crispin;
+namespace Kosinix;
 
 class Paginator {
     
