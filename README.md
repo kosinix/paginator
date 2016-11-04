@@ -61,6 +61,53 @@ Terms are best explained by this image
 
 ![alt tag](docs/info.jpg)
 
+## Silex Service Provider
+
+You can also create a service provider for paginator for use in Silex:
+
+```php
+// PaginatorServiceProvider.php
+
+use Silex\Application;
+use Silex\ServiceProviderInterface;
+use Kosinix\Paginator;
+
+class PaginatorServiceProvider implements ServiceProviderInterface {
+
+    public function register(Application $app) {
+        $app['paginator.per_page'] = isset($app['paginator.per_page']) ? (int)$app['paginator.per_page'] : 10;
+        $app['paginator'] = $app->protect(
+            function ($total, $page, $per_page=null) use ($app) {
+                if(null === $per_page){
+                    $per_page = $app['paginator.per_page'];
+                }
+                return new Paginator($total, $page, $per_page);
+            }
+        );
+    }
+
+    public function boot(Application $app) {
+
+    }
+}
+```
+
+Then in your app:
+
+```php
+// Paginator
+$app->register(new PaginatorServiceProvider());
+```
+
+In your controller:
+```php
+$sql = 'SELECT COUNT(*) AS `total` FROM product';
+$count = $app['db']->fetchAssoc($sql);
+$count = (int) $count['total'];
+
+/** @var \Kosinix\Paginator $paginator */
+$paginator =  $app['paginator']($count, $page); // $page would come from your web app
+```
 
 ## Test
 
