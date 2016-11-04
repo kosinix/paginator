@@ -11,15 +11,15 @@ class PaginatorTest extends PHPUnit_Framework_TestCase
         $paginator = new Paginator($total, $current_page, $per_page);
         
         $this->assertEquals(0, $paginator->getStartIndex());
-        $this->assertEquals(0, $paginator->getEndIndex(), 'end_index should be zero if total is zero');
+        $this->assertEquals(0, $paginator->getEndIndex(), 'End index should be zero if total is zero');
     }
     
     
     public function testAgainstValues()
     {
         $total = 23;
-        $per_page = 10;
         $current_page = 2;
+        $per_page = 10;
         $paginator = new Paginator($total, $current_page, $per_page);
         
         $this->assertEquals(10, $paginator->getStartIndex());
