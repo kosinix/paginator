@@ -34,7 +34,7 @@ The constructor accepts the following parameters:
 
 Terms are best explained by this image
 
-![alt tag](info.jpg)
+![alt tag](docs/info.jpg)
 
 
 ## Test
