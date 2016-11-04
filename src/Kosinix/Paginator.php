@@ -79,6 +79,7 @@ class Paginator {
         $this->start_index = ($current_page - 1) * $per_page;
 
         $this->end_index = $this->start_index + $per_page - 1;
+        $this->end_index = ($total <= 0) ? 0 : $this->end_index; // if total is zero, end index should be zero
 
         $this->first_index = 0;
 
